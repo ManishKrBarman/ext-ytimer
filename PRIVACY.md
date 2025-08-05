@@ -1,4 +1,4 @@
-# Privacy Policy for Year Countdown - New Tab Extension
+# Privacy Policy for ytimer - New Tab Extension
 
 **Last Updated: August 1, 2025**
 
