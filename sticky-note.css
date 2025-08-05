@@ -1,0 +1,641 @@
+/* Professional Sticky Note Styles */
+.year-countdown-sticky-note {
+    position: fixed !important;
+    width: 420px !important;
+    height: 320px !important;
+    min-height: 320px !important;
+    max-height: 600px !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+    border: 1px solid rgba(71, 85, 105, 0.15) !important;
+    border-radius: 12px !important;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.12),
+        0 10px 20px -8px rgba(0, 0, 0, 0.08),
+        0 4px 8px rgba(0, 0, 0, 0.04) !important;
+    z-index: 2147483647 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    resize: both !important;
+    overflow: visible !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transform-origin: bottom right !important;
+    border-top: 3px solid #3b82f6 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    contain: layout style !important;
+    /* Chrome-specific improvements */
+    will-change: transform, width, height !important;
+    backface-visibility: hidden !important;
+}
+
+.year-countdown-sticky-note:hover {
+    box-shadow:
+        0 32px 64px -12px rgba(0, 0, 0, 0.18),
+        0 15px 25px -8px rgba(0, 0, 0, 0.12),
+        0 8px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.year-countdown-sticky-note.hidden {
+    display: none !important;
+}
+
+.year-countdown-sticky-note.auto-fade {
+    opacity: 0.15 !important;
+    transform: scale(0.95) !important;
+}
+
+.year-countdown-sticky-note.auto-fade:hover {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+.year-countdown-sticky-note.minimized {
+    height: 60px !important;
+    min-height: 60px !important;
+    overflow: hidden !important;
+}
+
+.sticky-header {
+    background: linear-gradient(135deg, #334155 0%, #1e293b 100%) !important;
+    padding: 14px 18px !important;
+    cursor: move !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-radius: 12px 12px 0 0 !important;
+    user-select: none !important;
+    position: relative !important;
+    border-bottom: 1px solid rgba(71, 85, 105, 0.1) !important;
+    min-height: 24px !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    /* Chrome-specific drag improvements */
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+    touch-action: none !important;
+}
+
+.sticky-header::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.sticky-title {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #e2e8f0 !important;
+    margin: 0 !important;
+    flex: 1 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.sticky-title::before {
+    content: '📝' !important;
+    font-size: 14px !important;
+}
+
+.sticky-controls {
+    display: flex !important;
+    gap: 6px !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.sticky-controls button {
+    width: 24px !important;
+    height: 24px !important;
+    border: none !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #e2e8f0 !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.sticky-controls button:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: scale(1.05) !important;
+    color: #ffffff !important;
+}
+
+.sticky-toolbar {
+    background: #f8fafc !important;
+    border-bottom: 1px solid rgba(71, 85, 105, 0.1) !important;
+    padding: 8px 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 11px !important;
+    min-height: 20px !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+}
+
+.sticky-toolbar button {
+    background: #ffffff !important;
+    border: 1px solid rgba(71, 85, 105, 0.15) !important;
+    border-radius: 6px !important;
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: #475569 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.sticky-toolbar button:hover {
+    background: #f1f5f9 !important;
+    border-color: #3b82f6 !important;
+    color: #3b82f6 !important;
+}
+
+.sticky-toolbar button.active {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+    border-color: #3b82f6 !important;
+}
+
+.sticky-toolbar .separator {
+    width: 1px !important;
+    height: 16px !important;
+    background: rgba(71, 85, 105, 0.15) !important;
+    margin: 0 4px !important;
+}
+
+.sticky-toolbar select {
+    background: #ffffff !important;
+    border: 1px solid rgba(71, 85, 105, 0.15) !important;
+    border-radius: 6px !important;
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: #475569 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    min-width: 120px !important;
+}
+
+.sticky-toolbar select:hover {
+    background: #f1f5f9 !important;
+    border-color: #3b82f6 !important;
+    color: #3b82f6 !important;
+}
+
+.sticky-toolbar select:focus {
+    outline: none !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1) !important;
+}
+
+.sticky-toolbar .clear-note {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+    border-color: #ef4444 !important;
+}
+
+.sticky-toolbar .clear-note:hover {
+    background: #dc2626 !important;
+    border-color: #dc2626 !important;
+    color: #ffffff !important;
+}
+
+.sticky-content {
+    flex: 1 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    min-height: 150px !important;
+}
+
+.sticky-textarea {
+    width: 100% !important;
+    flex: 1 !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    padding: 16px 18px !important;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    color: #1e293b !important;
+    resize: none !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+    white-space: pre-wrap !important;
+    overflow-y: auto !important;
+    min-height: 120px !important;
+    height: auto !important;
+}
+
+.sticky-textarea::placeholder {
+    color: #64748b !important;
+    font-style: italic !important;
+}
+
+.sticky-textarea:focus {
+    background: rgba(59, 130, 246, 0.02) !important;
+}
+
+.sticky-footer {
+    background: #f8fafc !important;
+    border-top: 1px solid rgba(71, 85, 105, 0.1) !important;
+    padding: 8px 12px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 10px !important;
+    color: #64748b !important;
+    min-height: 16px !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    border-radius: 0 0 12px 12px !important;
+}
+
+.sticky-status {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.sticky-word-count::before {
+    content: '📊' !important;
+    margin-right: 4px !important;
+}
+
+.sticky-last-saved::before {
+    content: '💾' !important;
+    margin-right: 4px !important;
+}
+
+.sticky-resize-handle {
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    width: 20px !important;
+    height: 20px !important;
+    cursor: nw-resize !important;
+    background: linear-gradient(-45deg, transparent 0%, transparent 40%, #cbd5e1 40%, #cbd5e1 45%, transparent 45%, transparent 55%, #cbd5e1 55%, #cbd5e1 60%, transparent 60%) !important;
+    border-radius: 0 0 12px 0 !important;
+    opacity: 0.6 !important;
+    z-index: 10 !important;
+    touch-action: none !important;
+    user-select: none !important;
+}
+
+.sticky-resize-handle:hover {
+    opacity: 1 !important;
+    background: linear-gradient(-45deg, transparent 0%, transparent 35%, #94a3b8 35%, #94a3b8 40%, transparent 40%, transparent 50%, #94a3b8 50%, #94a3b8 55%, transparent 55%) !important;
+}
+
+.sticky-resize-handle:active {
+    opacity: 1 !important;
+    background: linear-gradient(-45deg, transparent 0%, transparent 30%, #64748b 30%, #64748b 35%, transparent 35%, transparent 45%, #64748b 45%, #64748b 50%, transparent 50%) !important;
+}
+
+/* Chrome-specific dragging states */
+.year-countdown-sticky-note.dragging {
+    box-shadow:
+        0 35px 65px -12px rgba(0, 0, 0, 0.25),
+        0 20px 35px -8px rgba(0, 0, 0, 0.18),
+        0 12px 18px rgba(0, 0, 0, 0.12) !important;
+    transition: none !important;
+    cursor: grabbing !important;
+    z-index: 2147483648 !important;
+}
+
+.year-countdown-sticky-note.resizing {
+    box-shadow:
+        0 35px 65px -12px rgba(0, 0, 0, 0.25),
+        0 20px 35px -8px rgba(0, 0, 0, 0.18),
+        0 12px 18px rgba(0, 0, 0, 0.12) !important;
+    transition: none !important;
+    cursor: se-resize !important;
+}
+
+/* Professional Color Themes */
+.year-countdown-sticky-note.theme-default {
+    border-top-color: #3b82f6 !important;
+}
+
+.year-countdown-sticky-note.theme-default .sticky-header {
+    background: linear-gradient(135deg, #334155 0%, #1e293b 100%) !important;
+}
+
+.year-countdown-sticky-note.theme-success {
+    border-top-color: #10b981 !important;
+}
+
+.year-countdown-sticky-note.theme-success .sticky-header {
+    background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important;
+}
+
+.year-countdown-sticky-note.theme-warning {
+    border-top-color: #f59e0b !important;
+}
+
+.year-countdown-sticky-note.theme-warning .sticky-header {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+}
+
+.year-countdown-sticky-note.theme-danger {
+    border-top-color: #ef4444 !important;
+}
+
+.year-countdown-sticky-note.theme-danger .sticky-header {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+}
+
+.year-countdown-sticky-note.theme-purple {
+    border-top-color: #8b5cf6 !important;
+}
+
+.year-countdown-sticky-note.theme-purple .sticky-header {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%) !important;
+}
+
+/* Professional Toggle Button */
+.year-countdown-sticky-toggle {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    width: 56px !important;
+    height: 56px !important;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    cursor: pointer !important;
+    z-index: 2147483646 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 20px !important;
+    color: #e2e8f0 !important;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15),
+        0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    user-select: none !important;
+    backdrop-filter: blur(20px) !important;
+    opacity: 1 !important;
+}
+
+.year-countdown-sticky-toggle.auto-fade {
+    opacity: 0.1 !important;
+    transform: scale(0.8) !important;
+}
+
+.year-countdown-sticky-toggle.auto-fade:hover {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+.year-countdown-sticky-toggle:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        0 8px 15px rgba(0, 0, 0, 0.15) !important;
+    background: linear-gradient(135deg, #334155 0%, #475569 100%) !important;
+    color: #ffffff !important;
+}
+
+.year-countdown-sticky-toggle.hidden {
+    display: none !important;
+}
+
+/* Responsive adjustments */
+/* Animations and interactions */
+.year-countdown-sticky-note.animate-in {
+    animation: slideInFromBottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.year-countdown-sticky-note.animate-out {
+    animation: slideOutToBottom 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) !important;
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%) scale(0.8) !important;
+        opacity: 0 !important;
+    }
+
+    to {
+        transform: translateY(0) scale(1) !important;
+        opacity: 1 !important;
+    }
+}
+
+@keyframes slideOutToBottom {
+    from {
+        transform: translateY(0) scale(1) !important;
+        opacity: 1 !important;
+    }
+
+    to {
+        transform: translateY(100%) scale(0.8) !important;
+        opacity: 0 !important;
+    }
+}
+
+/* Chrome-specific fixes - Only for Brave browser */
+@supports (-webkit-appearance: none) {
+    .year-countdown-sticky-note {
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+        transform-style: preserve-3d !important;
+    }
+
+    .sticky-content {
+        overflow: visible !important;
+    }
+
+    .sticky-textarea {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        height: 100% !important;
+        min-height: 120px !important;
+    }
+}
+
+/* Chrome Compatible Note Dialog Styles */
+#chrome-note-dialog {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+#chrome-note-overlay.auto-fade {
+    opacity: 0.1 !important;
+}
+
+#chrome-note-overlay.auto-fade:hover {
+    opacity: 1 !important;
+}
+
+#chrome-note-overlay.auto-fade #chrome-note-dialog {
+    transform: scale(0.95) !important;
+}
+
+#chrome-note-overlay.auto-fade:hover #chrome-note-dialog {
+    transform: scale(1) !important;
+}
+
+/* Chrome toggle button auto-fade */
+#chrome-note-toggle {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#chrome-note-toggle.auto-fade {
+    opacity: 0.1 !important;
+    transform: scale(0.8) !important;
+}
+
+#chrome-note-toggle.auto-fade:hover {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+#chrome-note-dialog textarea::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+#chrome-note-dialog textarea::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 4px !important;
+}
+
+#chrome-note-dialog textarea::-webkit-scrollbar-thumb {
+    background: #c1c1c1 !important;
+    border-radius: 4px !important;
+}
+
+#chrome-note-dialog textarea::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1 !important;
+}
+
+/* Chrome dialog button hover effects */
+#chrome-note-dialog button:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.2s ease !important;
+}
+
+#chrome-note-dialog button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Format button active states */
+#chrome-note-dialog button.active {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+    border-color: #3b82f6 !important;
+}
+
+/* Overlay animation */
+#chrome-note-overlay {
+    animation: fadeIn 0.2s ease-out !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0 !important;
+    }
+
+    to {
+        opacity: 1 !important;
+    }
+}
+
+/* Dialog animation */
+#chrome-note-dialog {
+    animation: slideInScale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+@keyframes slideInScale {
+    from {
+        transform: scale(0.8) translateY(20px) !important;
+        opacity: 0 !important;
+    }
+
+    to {
+        transform: scale(1) translateY(0) !important;
+        opacity: 1 !important;
+    }
+}
+
+/* Hide advanced sticky note features in Chrome - but show toggle */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .year-countdown-sticky-note {
+        display: none !important;
+    }
+
+    /* Keep toggle visible for both browsers */
+}
+
+/* Show advanced features in all webkit browsers */
+.year-countdown-sticky-note {
+    display: flex !important;
+}
+
+.year-countdown-sticky-toggle {
+    display: flex !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .year-countdown-sticky-note {
+        width: 280px !important;
+        min-height: 200px !important;
+        bottom: 80px !important;
+        right: 10px !important;
+    }
+
+    .year-countdown-sticky-toggle {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+
+    .sticky-header {
+        padding: 10px 14px !important;
+    }
+
+    .sticky-textarea {
+        padding: 16px !important;
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .year-countdown-sticky-note {
+        width: calc(100vw - 20px) !important;
+        max-width: 300px !important;
+        right: 10px !important;
+        left: 10px !important;
+    }
+}

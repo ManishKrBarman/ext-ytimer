@@ -1,0 +1,145 @@
+# Development files
+*.backup
+test*.html
+*test*
+generate-*.html
+
+# Build artifacts
+*.zip
+*.crx
+*.pem
+dist/
+build/
+release-package/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db:encryptable
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Documentation drafts
+*draft*
+*temp*
+*tmp*
+
+# Archive files
+*.tar.gz
+*.rar
+*.7z
+
+# Chrome extension development
+*.crx
+*.pem
+web-store/
+screenshots/
+*.key
+keys/
+private/
+
+# Build scripts (if any)
+build.sh
+build.bat
+create-release-package.*
+cleanup-production.*
+package.*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Cache files
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Temporary folders
+tmp/
+temp/
+
+# Editor directories and files
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env.test
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Version files (if auto-generated)
+version.txt
+VERSION
+
+# Extension store assets (if not tracking)
+store-assets/
+promo-images/
+marketing/
+
+# Personal notes (if any)
+NOTES.md
+TODO.md
+SCRATCH.md
