@@ -5,6 +5,27 @@ All notable changes to YTimer will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2025-08-06
+
+### Fixed
+- **Service Worker Registration**: Resolved "process is not defined" error by removing Node.js `process.env` references
+- **Code Structure**: Removed duplicate root-level `background.js` and `content-script.js` files
+- **Browser Compatibility**: Eliminated Node.js dependencies from browser-side code
+- **Icon References**: Fixed missing `icon.svg` references in newtab.html and manifest.json
+- **Error Handling**: Added comprehensive try-catch blocks throughout service worker
+
+### Changed
+- **File Organization**: Consolidated all source code to `src/` directory structure
+- **Service Worker**: Enhanced background script with better error handling and alarm management
+- **Build Process**: Improved validation script and updated documentation
+- **Manifest**: Updated web accessible resources to reference existing PNG icons
+
+### Documentation
+- **README.md**: Updated installation instructions and technical details section
+- **STRUCTURE.md**: Added detailed file descriptions and recent changes documentation
+- **CONTRIBUTING.md**: Updated development setup and architecture documentation
+- **Repository URLs**: Fixed GitHub repository references in contributing guidelines
+
 ## [1.1.0] - 2025-08-04
 
 ### Added

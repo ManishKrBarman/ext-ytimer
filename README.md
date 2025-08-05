@@ -80,28 +80,45 @@ Choose from 8 professionally designed templates for various productivity needs:
 1. **Download the Extension**
    ```bash
    git clone https://github.com/ManishKrBarman/ext-ytimer.git
+   cd ext-ytimer
    ```
    Or download as ZIP from the [GitHub repository](https://github.com/ManishKrBarman/ext-ytimer) and extract it.
 
-2. **Open Browser Extensions Page**
+2. **Validate Extension Structure (Optional)**
+   ```bash
+   # Ensure all required files are present
+   npm run build
+   ```
+
+3. **Open Browser Extensions Page**
    - **Chrome/Edge**: Navigate to `chrome://extensions/`
    - **Brave**: Navigate to `brave://extensions/`
 
-3. **Enable Developer Mode**
+4. **Enable Developer Mode**
    - Toggle the "Developer mode" switch in the top right corner
 
-4. **Load the Extension**
+5. **Load the Extension**
    - Click "Load unpacked" button
-   - Select the downloaded/extracted extension folder
+   - Select the extension root folder (containing `manifest.json`)
    - The extension will be installed and automatically activated
 
-5. **Verify Installation**
+6. **Verify Installation**
    - Open a new tab to see the Year Countdown dashboard
    - Look for the floating sticky notes toggle button (📝)
 
 **Update Process:**
-- Pull latest changes: `git pull origin main`
-- Click the refresh button (🔄) on the extension card in `chrome://extensions/`
+```bash
+# Pull latest changes
+git pull origin main
+
+# Validate structure (optional)
+npm run build
+
+# Refresh extension in browser
+# Click the refresh button (🔄) on the extension card
+```
+
+> **📁 Clean Structure**: This extension uses an organized file structure with all source code in the `src/` directory. No build process is required - it runs directly from source files.
 
 ## 🎮 How to Use
 
@@ -172,12 +189,33 @@ Click the floating 📝 button to open your note-taking interface.
 
 ## 🛠️ Technical Details
 
-- **Manifest V3** compatible
-- **Service Worker** based background script
-- **Local Storage** for all user data
-- **Responsive CSS** with modern design patterns
-- **Cross-browser compatibility** detection
-- **Performance optimized** with minimal resource usage
+### Architecture
+- **Manifest V3** compatible with modern Chrome extension standards
+- **Service Worker** based background script for efficient resource management
+- **Content Scripts** for seamless web page integration
+- **Local Storage** for all user data - no external dependencies
+- **Modular Structure** with organized source code in `src/` directory
+
+### Code Organization
+```
+src/
+├── js/
+│   ├── background.js    # Service worker with alarms and notifications
+│   ├── content-script.js # Sticky notes injection for web pages  
+│   └── newtab.js       # Main dashboard functionality
+├── css/
+│   ├── styles.css      # New tab interface styling
+│   └── sticky-note.css # Sticky notes themes and animations
+└── html/
+    └── newtab.html     # New tab page structure
+```
+
+### Performance & Compatibility
+- **Cross-browser compatibility** detection with browser-specific optimizations
+- **Responsive CSS** with modern design patterns and animations
+- **Error handling** with comprehensive try-catch blocks and fallbacks
+- **Build validation** ensuring all required files and dependencies exist
+- **Browser-optimized code** with no Node.js dependencies in runtime files
 
 ## 🤝 Contributing
 

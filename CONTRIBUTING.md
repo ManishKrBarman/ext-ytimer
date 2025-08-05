@@ -27,9 +27,9 @@ Pull requests are the best way to propose changes to the codebase. We actively w
 
 In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
 
-## Report bugs using GitHub's [issue tracker](https://github.com/manish/ext-ytimer/issues)
+## Report bugs using GitHub's [issue tracker](https://github.com/ManishKrBarman/ext-ytimer/issues)
 
-We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/manish/ext-ytimer/issues/new).
+We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/ManishKrBarman/ext-ytimer/issues/new).
 
 ## Write bug reports with detail, background, and sample code
 
@@ -47,18 +47,23 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/manish/ext-ytimer.git
+   git clone https://github.com/ManishKrBarman/ext-ytimer.git
    cd ext-ytimer
    ```
 
-2. Load the extension in Chrome:
+2. Validate the extension structure (optional):
+   ```bash
+   npm run build
+   ```
+
+3. Load the extension in your browser:
    - Open Chrome and navigate to `chrome://extensions/`
    - Enable "Developer mode" in the top right
-   - Click "Load unpacked" and select the project directory
+   - Click "Load unpacked" and select the project root directory
 
-3. Make your changes and test thoroughly
+4. Make your changes and test thoroughly
 
-4. Submit a pull request with a clear description of your changes
+5. Submit a pull request with a clear description of your changes
 
 ## Code Style
 
@@ -66,16 +71,42 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 - Comment your code where necessary
 - Follow the existing code style and patterns
 - Test your changes in both Chrome and Brave browsers
+- Ensure no Node.js dependencies in browser-side code
+- Use async/await for Chrome extension API calls
+- Add comprehensive error handling with try-catch blocks
 
 ## Extension Architecture
 
-- `manifest.json` - Extension configuration
-- `background.js` - Service worker for background tasks
-- `content-script.js` - Injected into all pages for sticky notes
-- `newtab.html` - New tab page layout
-- `newtab.js` - Main application logic
-- `styles.css` - Main stylesheet
-- `sticky-note.css` - Sticky notes styling
+### File Structure
+```
+├── manifest.json              # Extension configuration (Manifest V3)
+├── src/
+│   ├── js/
+│   │   ├── background.js      # Service worker for background tasks
+│   │   ├── content-script.js  # Injected into pages for sticky notes
+│   │   └── newtab.js         # Main application logic for new tab
+│   ├── css/
+│   │   ├── styles.css        # Main stylesheet for new tab
+│   │   └── sticky-note.css   # Sticky notes styling and themes
+│   └── html/
+│       └── newtab.html       # New tab page layout
+├── assets/
+│   └── icons/                # Extension icons (16, 32, 48, 128px)
+└── build.js                  # Validation script
+```
+
+### Key Components
+- **Service Worker** (`src/js/background.js`): Handles alarms, notifications, and extension lifecycle
+- **Content Script** (`src/js/content-script.js`): Manages sticky notes on web pages
+- **New Tab Override** (`src/html/newtab.html` + `src/js/newtab.js`): Main dashboard functionality
+- **Modular CSS**: Separate stylesheets for different features
+
+### Recent Improvements
+- ✅ Removed duplicate root-level JS files
+- ✅ Fixed Node.js compatibility issues (`process.env` removed)
+- ✅ Enhanced error handling throughout codebase
+- ✅ Updated manifest references and icon paths
+- ✅ Improved service worker stability
 
 ## Testing
 
