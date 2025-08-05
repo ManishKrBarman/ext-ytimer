@@ -280,30 +280,6 @@ class StickyNoteManager {
             const exportBtn = document.getElementById('chrome-export');
             const clearBtn = document.getElementById('chrome-clear');
 
-            // Debug element existence
-            console.log('Chrome note elements:', {
-                closeBtn: !!closeBtn,
-                boldBtn: !!boldBtn,
-                italicBtn: !!italicBtn,
-                codeBtn: !!codeBtn,
-                bulletBtn: !!bulletBtn,
-                numberBtn: !!numberBtn,
-                templateSelect: !!templateSelect,
-                exportBtn: !!exportBtn,
-                clearBtn: !!clearBtn,
-                textarea: !!textarea
-            });
-
-            // Debug method availability
-            console.log('Chrome note methods:', {
-                insertChromeFormatting: typeof this.insertChromeFormatting,
-                insertChromeList: typeof this.insertChromeList,
-                insertChromeTemplate: typeof this.insertChromeTemplate,
-                exportChromeNotes: typeof this.exportChromeNotes,
-                saveChromeNoteContent: typeof this.saveChromeNoteContent,
-                updateChromeWordCount: typeof this.updateChromeWordCount
-            });
-
             if (closeBtn) {
                 closeBtn.addEventListener('click', (e) => {
                     e.preventDefault();

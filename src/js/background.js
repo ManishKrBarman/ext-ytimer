@@ -33,7 +33,7 @@ async function checkYearChange() {
             if (chrome.notifications) {
                 chrome.notifications.create({
                     type: 'basic',
-                    iconUrl: 'icons/icon-48.png',
+                    iconUrl: 'assets/icons/icon-48.png',
                     title: 'Happy New Year!',
                     message: `Welcome to ${currentYear}! The countdown has reset.`
                 });
@@ -66,20 +66,19 @@ chrome.tabs.onCreated.addListener((tab) => {
     }
 });
 
-// Log storage changes for debugging
-chrome.storage.onChanged.addListener((changes, namespace) => {
-    for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
-        console.log(
-            `Storage key "${key}" in namespace "${namespace}" changed.`,
-            `Old value was "${oldValue}", new value is "${newValue}".`
-        );
-    }
-});
+// Log storage changes for debugging (development only)
+if (process.env.NODE_ENV === 'development') {
+    chrome.storage.onChanged.addListener((changes, namespace) => {
+        for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
+            console.log(
+                `Storage key "${key}" in namespace "${namespace}" changed.`,
+                `Old value was "${oldValue}", new value is "${newValue}".`
+            );
+        }
+    });
+}
 
 // Clean up when service worker suspends
-chrome.runtime.onSuspend.addListener(() => {
-    console.log('Service worker is being suspended');
-});
 
 // Keep service worker alive with periodic storage writes
 let heartbeatInterval;
