@@ -11,9 +11,9 @@ A powerful browser extension that transforms your new tab into a comprehensive p
 
 | Feature | Screenshot |
 |---------|------------|
-| **New Tab Dashboard** | ![New Tab Interface](imgs/tab.png) |
-| **Sticky Notes Toggle** | ![Notes Toggle Button](imgs/notes_toggle.png) |
-| **Advanced Note-Taking** | ![Notes Window with Templates](imgs/notes_window.png) |
+| **New Tab Dashboard** | ![New Tab Interface](assets/imgs/tab.png) |
+| **Sticky Notes Toggle** | ![Notes Toggle Button](assets/imgs/notes_toggle.png) |
+| **Advanced Note-Taking** | ![Notes Window with Templates](assets/imgs/notes_window.png) |
 
 *Beautiful year countdown with progress visualization, convenient floating toggle for quick access, and professional sticky notes with rich formatting and templates*
 
